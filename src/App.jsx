@@ -48,12 +48,40 @@ function App() {
     }
   }, []);
 
+  function handleThemeChange(newTheme) {
+    setTheme(newTheme)
+
+    const storage = JSON.parse(localStorage.getItem(LOCAL_STORAGE_NAME))
+
+    localStorage.setItem(LOCAL_STORAGE_NAME, JSON.stringify({
+      theme: newTheme,
+      language: storage.language
+    }))
+  }
+
+  function handleLanguageChange(newLanguage) {
+    setLanguage(newLanguage)
+
+    const storage = JSON.parse(localStorage.getItem(LOCAL_STORAGE_NAME))
+
+    localStorage.setItem(LOCAL_STORAGE_NAME, JSON.stringify({
+      theme: storage.theme,
+      language: newLanguage
+    }))
+  }
+
   return (
-    <div className={theme === "light" ? "light" : "dark"}>
-      <div className="top-panel">
+    <div className={`page-container ${theme === "light" ? "light" : "dark"}`}>
+      <div className={`top-panel ${theme === "light" ? "light" : "dark"}`}>
         <h1>{text[language].header}</h1>
         <div className={`settings-panel ${theme === "light" ? "light" : "dark"}`}>
-          <select name="language" id="language" onChange={(event) => setLanguage(event.target.value)} >
+          {theme === "light" ?
+            <button onClick={() => handleThemeChange("dark")} >{text[language].themeDark}</button>
+            :
+            <button onClick={() => handleThemeChange("light")} >{text[language].themeLight}</button>
+          }
+
+          <select name="language" id="language" onChange={(event) => handleLanguageChange(event.target.value)} defaultValue={language}>
             {languages.map((language) => {
               return (
                 <option key={language} value={language}>{text[language].name}</option>

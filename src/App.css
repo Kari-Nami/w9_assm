@@ -1,3 +1,8 @@
+.page-container {
+    width: 100vw;
+    height: 100vh;
+}
+
 .light {
     background-color: var(--light-background-color);
     color: var(--light-text-color);
@@ -9,17 +14,35 @@
 }
 
 .top-panel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+
+.top-panel.light {
+    outline: var(--light-border-color) 1px solid;
+}
+
+.top-panel.dark {
+    outline: var(--dark-border-color) 1px solid;
 }
 
 .settings-panel {
-
+    display: flex;
+    flex-direction: column;
 }
 
 .preview-card {
     width: 50%;
     height: 100px;
     border-radius: 1rem;
+    margin: 0 auto;
+
+    text-align: center;
+    align-content: center;
 }
 
 .preview-card.light {

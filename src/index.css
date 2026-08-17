@@ -1,6 +1,6 @@
 :root {
     --light-background-color: white;
-    --dark-background-color: darkslategrey;
+    --dark-background-color: #3e3e3e;
 
     --light-text-color: black;
     --dark-text-color: white;
@@ -10,6 +10,9 @@
 }
 
 * {
+    padding: 0;
+    margin: 0;
+
     font-family: sans-serif;
     background-color: inherit;
     color: inherit;
