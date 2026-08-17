@@ -5,8 +5,8 @@
     --light-text-color: black;
     --dark-text-color: white;
 
-    --light-border-color: darkgrey;
-    --dark-border-color: black;
+    --light-border-color: black;
+    --dark-border-color: grey;
 }
 
 * {

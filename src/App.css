@@ -31,13 +31,29 @@
 }
 
 .settings-panel {
-    display: flex;
-    flex-direction: column;
+}
+
+select, button {
+    padding: 0.3rem 1rem;
+}
+
+button {
+    margin-right: 0.5rem;
+    border-radius: 1rem;
+    /*border: none;*/
+}
+
+.light-button {
+    border: var(--light-border-color) 1px solid;
+}
+
+.dark-button {
+    border: var(--dark-border-color) 1px solid;
 }
 
 .preview-card {
     width: 50%;
-    height: 100px;
+    height: 150px;
     border-radius: 1rem;
     margin: 0 auto;
 
@@ -51,4 +67,8 @@
 
 .preview-card.dark {
     outline: var(--dark-border-color) 1px solid;
+}
+
+h2 {
+    margin-bottom: 1rem;
 }

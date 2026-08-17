@@ -7,22 +7,22 @@ const text = {
     name: "English",
     header: "Welcome",
     preview: "This is your preference preview.",
-    themeLight: "Light",
-    themeDark: "Dark",
+    light: "Light",
+    dark: "Dark",
   },
   th: {
     name: "ไทย",
     header: "ยินดีต้อนรับ",
     preview: "นี่คือหน้าตัวอย่างการตั้งค่า",
-    themeLight: "สว่าง",
-    themeDark: "มืด",
+    light: "สว่าง",
+    dark: "มืด",
   },
   ru: {
     name: "Русский",
     header: "Добро Пожаловать",
     preview: "Это превью ваших предпочтений.",
-    themeLight: "Светлый",
-    themeDark: "Темный",
+    light: "Светлый",
+    dark: "Темный",
   }
 }
 
@@ -76,9 +76,9 @@ function App() {
         <h1>{text[language].header}</h1>
         <div className={`settings-panel ${theme === "light" ? "light" : "dark"}`}>
           {theme === "light" ?
-            <button onClick={() => handleThemeChange("dark")} >{text[language].themeDark}</button>
+            <button className="light-button" onClick={() => handleThemeChange("dark")} >{text[language].dark}</button>
             :
-            <button onClick={() => handleThemeChange("light")} >{text[language].themeLight}</button>
+            <button className="dark-button" onClick={() => handleThemeChange("light")} >{text[language].light}</button>
           }
 
           <select name="language" id="language" value={language} onChange={(event) => handleLanguageChange(event.target.value)}>
@@ -91,7 +91,9 @@ function App() {
         </div>
       </div>
       <div className={`preview-card ${theme === "light" ? "light" : "dark"}`}>
-        {text[language].preview}
+        <h2>{text[language].preview}</h2>
+        <p>{text[language][theme]}</p>
+        <p>{text[language].name}</p>
       </div>
     </div>
   )
