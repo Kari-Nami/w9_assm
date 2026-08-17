@@ -1,0 +1,31 @@
+.light {
+    background-color: var(--light-background-color);
+    color: var(--light-text-color);
+}
+
+.dark {
+    background-color: var(--dark-background-color);
+    color: var(--dark-text-color);
+}
+
+.top-panel {
+
+}
+
+.settings-panel {
+
+}
+
+.preview-card {
+    width: 50%;
+    height: 100px;
+    border-radius: 1rem;
+}
+
+.preview-card.light {
+    outline: var(--light-border-color) 1px solid;
+}
+
+.preview-card.dark {
+    outline: var(--dark-border-color) 1px solid;
+}
