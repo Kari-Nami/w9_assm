@@ -11,8 +11,6 @@ function App() {
 
     if (savedSettings) {
       console.log("--> local storage loaded")
-      console.log(savedSettings)
-      console.log(language)
       setTheme(savedSettings.theme)
       setLanguage(savedSettings.language)
     }
@@ -30,10 +28,11 @@ function App() {
       <div className="top-panel">
         <h1>{language.header}</h1>
         <div className={`settings-panel ${theme === "light" ? "light" : "dark"}`}>
-          <select name="language" id="language">
-            {languages.map((language) => {
+          <select name="language" id="language" onChange={(event) => setLanguage(event.target.value)} >
+            {Object.entries(languages).map((language) => {
+              console.log(language[1])
               return (
-                <option value={language.currentLanguage}></option>
+                <option key={language[1]} value={language[1].name}>{language[1].currentLanguage}</option>
               )
             })}
           </select>
