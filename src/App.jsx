@@ -81,7 +81,7 @@ function App() {
             <button onClick={() => handleThemeChange("light")} >{text[language].themeLight}</button>
           }
 
-          <select name="language" id="language" onChange={(event) => handleLanguageChange(event.target.value)} defaultValue={language}>
+          <select name="language" id="language" value={language} onChange={(event) => handleLanguageChange(event.target.value)}>
             {languages.map((language) => {
               return (
                 <option key={language} value={language}>{text[language].name}</option>
